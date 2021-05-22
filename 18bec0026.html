@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="Sridhar" content="18BEC0026">
+	  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+     
+       <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+      <title>18BEC0026 A.VISVA SAI SRIDHAR</title></head>
+      <body bgcolor="#000000">
+   <center>
+		<h1 style="font-family: Helvetica;color: white;">A.VISVA SAI SRIDHAR 18BEC0026</h1>
+	</center>
+   
+   <div class="center">
+	<div align="center" class="form">
+       <form action="" method="get">
+			  <input type="text" id="ip" class="ip" placeholder="Thingspeak Write API Key"></input><br>
+              <button type="button" id="A1-on" class="button button1" >A1 ON</button>
+			  <button type="button" id="A1-off" class="button button3" >A1 OFF</button>
+			  <br>
+			  <button type="button" id="A2-on" class="button button1" >A2 ON</button>
+			  <button type="button" id="A2-off" class="button button3" >A2 OFF</button>
+			  <br>
+			  <button type="button" id="A3-on" class="button button1" >A3 ON</button>
+			  <button type="button" id="A3-off" class="button button3" >A3 OFF</button>
+			  <br>
+			  <textarea id="logger" class="ip" placeholder="LOGS" readonly></textarea>
+        </form>
+		<br><br>
+	 </div>
+	</div>
+	
+	<footer class="footer">
+		
+	</footer>
+
+    </body>
+    <script>
+		document.getElementById('A1-on').addEventListener('click', function() {
+				var ip = document.getElementById('ip').value;
+				var url = "http://api.thingspeak.com/update?api_key="+ ip + "&field1=1"
+				$.getJSON(url, function(data) {
+					console.log(data);
+				});
+		});
+		
+		document.getElementById('A1-off').addEventListener('click', function() {
+				var ip = document.getElementById('ip').value;
+				var url = "http://api.thingspeak.com/update?api_key="+ ip + "&field1=0"
+				$.getJSON(url, function(data) {
+					console.log(data);
+				});
+		});
+		
+		
+		document.getElementById('A2-on').addEventListener('click', function() {
+				var ip = document.getElementById('ip').value;
+				var url = "http://api.thingspeak.com/update?api_key="+ ip + "&field2=1"
+				$.getJSON(url, function(data) {
+					console.log(data);
+				});
+		});
+		
+		document.getElementById('A2-off').addEventListener('click', function() {
+				var ip = document.getElementById('ip').value;
+				var url = "http://api.thingspeak.com/update?api_key="+ ip + "&field2=0"
+				$.getJSON(url, function(data) {
+					console.log(data);
+				});
+		});
+		
+		
+		document.getElementById('A3-on').addEventListener('click', function() {
+				var ip = document.getElementById('ip').value;
+				var url = "http://api.thingspeak.com/update?api_key="+ ip + "&field3=1"
+				$.getJSON(url, function(data) {
+					console.log(data);
+				});
+		});
+		
+		document.getElementById('A3-off').addEventListener('click', function() {
+				var ip = document.getElementById('ip').value;
+				var url = "http://api.thingspeak.com/update?api_key="+ ip + "&field3=0"
+				$.getJSON(url, function(data) {
+					console.log(data);
+				});
+		});
+
+		
+	</script>
+</html>
